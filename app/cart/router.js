@@ -2,7 +2,7 @@ const router = require("express").Router();
 const cartController = require("./controller");
 const { police_check } = require("../../middlewares");
 
-router.put("/carts/:productId", police_check("update", "Carts"), cartController.update);
+router.put("/carts", police_check("update", "Carts"), cartController.update);
 router.delete("/carts", cartController.deleteCartItemById);
 router.get("/carts", police_check("read", "Carts"), cartController.index);
 
